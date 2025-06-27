@@ -20,6 +20,8 @@ if ($data) {
     ]);
     echo "Weather data updated!";
 } else {
-    echo "Failed to decode weather data.";
+    file_put_contents('cron_debug.log', date('c')." - Failed to decode weather data: $response\n", FILE_APPEND);
 }
 ?>
+
+
